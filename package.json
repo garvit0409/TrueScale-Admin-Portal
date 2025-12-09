@@ -1,0 +1,18 @@
+{
+  "name": "sih-project",
+  "version": "1.0.0",
+  "description": "Smart Weight Tampering Detection System",
+  "scripts": {
+    "start": "cd frontend && npm start",
+    "start-backend": "cd smart-weight-backend && npm start"
+  },
+  "keywords": [
+    "tampering",
+    "detection",
+    "weights",
+    "smart",
+    "IoT"
+  ],
+  "author": "Smart India Hackathon Team",
+  "license": "MIT"
+}
