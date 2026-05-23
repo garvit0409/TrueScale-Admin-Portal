@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Device Request</title>
+</head>
+<body>
+    <h1>Test Device Request</h1>
+    <form id="test-form">
+        <input type="text" id="name" placeholder="Name of Applicant" required><br><br>
+        <select id="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+        <input type="text" id="govid" placeholder="Government ID" required><br><br>
+        <input type="tel" id="contact" placeholder="Contact Number" required><br><br>
+        <input type="text" id="manufacture" placeholder="Manufacture Name" required><br><br>
+        <input type="text" id="capacity" placeholder="Weighing Capacity" required><br><br>
+        <input type="date" id="purchase-date" required><br><br>
+        <textarea id="address" placeholder="Shop Address" required></textarea><br><br>
+        <select id="state" required>
+            <option value="">Select State</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Delhi">Delhi</option>
+        </select><br><br>
+        <input type="text" id="district" placeholder="District" required><br><br>
+        <input type="text" id="tehsil" placeholder="Tehsil" required><br><br>
+        <button type="submit">Submit Request</button>
+    </form>
+
+    <script>
+        document.getElementById('test-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const data = {
+                name: document.getElementById('name').value,
+                gender: document.getElementById('gender').value,
+                governmentId: document.getElementById('govid').value,
+                contactNumber: document.getElementById('contact').value,
+                manufactureName: document.getElementById('manufacture').value,
+                weighingCapacity: document.getElementById('capacity').value,
+                dateOfPurchase: document.getElementById('purchase-date').value,
+                shopAddress: document.getElementById('address').value,
+                state: document.getElementById('state').value,
+                district: document.getElementById('district').value,
+                tehsil: document.getElementById('tehsil').value
+            };
+            
+            try {
+                const response = await fetch('http://localhost:3001/api/device-requests', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Success! Reference: ' + result.referenceNo);
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                alert('Network Error: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
