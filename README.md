@@ -32,7 +32,8 @@ Auditor Application: TrustScale Auditor App — Native Kotlin application for co
 
 Hardware Proof: ([url](https://www.linkedin.com/posts/contact-garvit-arora_smartindiahackathon-sih-aicte-ugcPost-7408480922867564544-uGDD/))
 
-Software Proof: [https://drive.google.com/file/d/1LCIL1fH8BrB-Bw7LZdqynDwDOMSkz_I8/view](url)
+Software Proof: ([url](https://drive.google.com/file/d/1LCIL1fH8BrB-Bw7LZdqynDwDOMSkz_I8/view))
+
 🛠️ Detailed Layer Breakdown
 1. Embedded Hardware & Signal Engineering (firmware/)
 The physical hardware module intercepts data and physical breaches right at the machine level using an ESP32 microcontroller.
